@@ -8,6 +8,10 @@ import DetailScreen from './src/screens/DetailScreen';
 
 const Stack = createNativeStackNavigator();
 
+const headerStyle = {
+  backgroundColor: 'yellow',
+};
+
 const App = () => {
   return (
     <NavigationContainer>
@@ -27,11 +31,27 @@ const App = () => {
                 <Text>right</Text>
               </View>
             ),
-            headerStyle: {backgroundColor: 'yellow'},
+            headerStyle,
+            contentStyle: {
+              shadowRadius: 0,
+              shadowOffset: {
+                height: 0,
+                width: 0,
+              },
+              shadowColor: 'transparent',
+            },
           }}
         />
-        <Stack.Screen name="ListSchedule" component={ListScheduleScreen} />
-        <Stack.Screen name="Details" component={DetailScreen} />
+        <Stack.Screen
+          name="ListSchedule"
+          component={ListScheduleScreen}
+          options={{headerStyle}}
+        />
+        <Stack.Screen
+          name="DetailSchedule"
+          component={DetailScreen}
+          options={{headerStyle}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
