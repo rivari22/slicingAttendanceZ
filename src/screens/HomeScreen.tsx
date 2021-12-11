@@ -9,21 +9,11 @@ import {
   ScrollView,
 } from 'react-native';
 import styled from 'styled-components';
+import {ContainerCard} from '../components/Card/Card.Mini';
 
 const {height: screenHeight, width: screenWidth} = Dimensions.get('screen');
 
 const Container = styled(View)``;
-
-const ContainerCard = styled(View)`
-  border-radius: 8px;
-  background-color: grey;
-  padding: 12px;
-  margin-top: 8px;
-  width: ${({width}: {width?: Number; isScroll?: boolean}) =>
-    width ? width + 'px' : 'auto'};
-  margin-right: ${({isScroll}: {width?: Number; isScroll?: boolean}) =>
-    isScroll ? '12px' : '0'};
-`;
 
 const HeroContainer = styled(View)`
   background-color: yellow;
